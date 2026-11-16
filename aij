@@ -1,0 +1,11 @@
+cd /home/ubuntu/work/hisati
+
+read -rsp "Expo access token: " EXPO_TOKEN
+printf '\n'
+export EXPO_TOKEN
+
+npx eas-cli@latest whoami
+npx eas-cli@latest build:configure
+npx eas-cli@latest build --platform android --profile preview
+
+unset EXPO_TOKEN
